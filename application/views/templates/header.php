@@ -55,12 +55,12 @@
                             <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('admin'); ?>" method="post">
+                            <form action="<?= base_url('admin'); ?>" method="POST">
                                 <div class="form-group">
-                                    <input id="email-modal" type="text" placeholder="email" class="form-control">
+                                    <input id="email-modal" type="email" name="email" placeholder="email" class="form-control" value="<?= set_value('email'); ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input id="password-modal" type="password" placeholder="password" class="form-control">
+                                    <input id="password-modal" type="password" name="password" placeholder="password" class="form-control">
                                 </div>
                                 <p class="text-center">
                                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
@@ -82,62 +82,17 @@
                 </div>
                 <div id="navigation" class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a href="<?= base_url(); ?>" class="nav-link">Home</a></li>
-                        <li class="nav-item dropdown menu-large"><a id="menu-ikan" href="#" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Ikan<b class="caret"></b></a>
-                            <ul class="dropdown-menu megamenu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-3">
-                                            <h5><a class="nav-link" name="kategori" value="ikan guppy" href="<?= base_url('produk/kategori/Guppy'); ?>">Guppy</a></h5>
-                                            <ul class="list-unstyled mb-3">
-                                                <li class="nav-item"><a href="category.html" class="nav-link">Red-tail</a></li>
-                                                <li class="nav-item"><a href="category.html" class="nav-link">Black-Tail</a></li>
-                                                <li class="nav-item"><a href="category.html" class="nav-link">Blue-Sky</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown menu-large"><a id="menu-pakan" href="<?= base_url('produk/kategori/Pakan'); ?>" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Pakan<b class="caret"></b></a>
-                            <ul class="dropdown-menu megamenu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-3">
-                                            <h5><a class="nav-link" name="kategori" value="ikan guppy" href="<?= base_url('produk/kategori/Pelet'); ?>">Pelet</a></h5>
-                                            <ul class="list-unstyled mb-3">
-                                                <li class="nav-item"><a href="category.html" class="nav-link">Sinar jaya</a></li>
-                                                <li class="nav-item"><a href="category.html" class="nav-link">Mas pur</a></li>
-                                                <li class="nav-item"><a href="category.html" class="nav-link">Nano-Nano</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown menu-large"><a id="menu-aksesoris" href="<?= base_url('produk/kategori/Aksesoris'); ?>" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Aksesoris<b class="caret"></b></a>
-                            <ul class="dropdown-menu megamenu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-3">
-                                            <h5><a class="nav-link" name="kategori" value="ikan guppy" href="<?= base_url('produk/kategori/Akuarium'); ?>">Akuarium</a></h5>
-                                            <ul class="list-unstyled mb-3">
-                                                <li class="nav-item"><a href="index.html" class="nav-link">Bening</a></li>
-                                                <li class="nav-item"><a href="category.html" class="nav-link">3x3</a></li>
-                                                <li class="nav-item"><a href="category-right.html" class="nav-link">Gelap</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="navbar-buttons d-flex justify-content-end">
-                        <!-- /.nav-collapse-->
-                        <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
-                        <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="<?= base_url('basket'); ?>" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>cart</span></a></div>
-                    </div>
+                        <?php foreach ($menu as $result) : ?>
+                            <li class="nav-item"><a href="<?= base_url(); ?><?= $result['url']; ?>" class="nav-link"><?= $result['judul']; ?></a></li>
+                        <?php endforeach; ?>
                 </div>
+                </ul>
+                <div class="navbar-buttons d-flex justify-content-end">
+                    <!-- /.nav-collapse-->
+                    <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
+                    <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="<?= base_url('basket'); ?>" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>cart</span></a></div>
+                </div>
+            </div>
             </div>
         </nav>
         <div id="search" class="collapse">

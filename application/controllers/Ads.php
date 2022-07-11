@@ -15,6 +15,7 @@ class Ads extends CI_Controller
         $data['title'] = 'Form Tambah Ads';
         $data['menu'] = 'ads';
         $data['ads'] = array();
+        $data['submenu'] = $this->Model_Admin->select_menu();
 
         // set rules errors validation
         $this->form_validation->set_rules('nama', 'Nama', 'required');
@@ -35,6 +36,7 @@ class Ads extends CI_Controller
         $data['title'] = 'Form Ubah Ads';
         $data['menu'] = 'ads';
         $data['ads'] = $this->Model_Ads->select_where($id)->result();
+        $data['submenu'] = $this->Model_Admin->select_menu();
 
         // set rules errors validation
         $this->form_validation->set_rules('nama', 'Nama', 'required');

@@ -9,6 +9,7 @@ class Contact extends CI_Controller
         $this->mybreadcrumb->add('Home', base_url());
         $this->mybreadcrumb->add('Contact', base_url('contact'));
         $data['breadcrumbs'] = $this->mybreadcrumb->render();
+        $data['menu'] = $this->Model_Produk->select_menu();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/breadcrumb', $data);

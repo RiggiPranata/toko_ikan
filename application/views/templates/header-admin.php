@@ -43,15 +43,15 @@
                 </div>
                 <div id="navigation" class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a href="<?= base_url('admin'); ?>" class="nav-link">Produk</a></li>
-                        <li class="nav-item"><a href="<?= base_url('admin/kategori'); ?>" class="nav-link">Katageori</a></li>
-                        <li class="nav-item"><a href="<?= base_url('admin/ads'); ?>" class="nav-link">Ads</a></li>
+                        <?php foreach ($submenu as $result) : ?>
+                            <li class="nav-item"><a href="<?= base_url(); ?><?= $result['url']; ?>" class="nav-link"><?= $result['judul']; ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <!-- TAMBAH DATA -->
-    <div class="col-lg-12 m-2">
+    <div class="col-lg-12 m-2" id="tbh">
         <a href="<?= base_url(); ?><?= $menu; ?>/tambah" class="btn btn-primary">Tambah Data <?= $menu ?></a>
     </div>

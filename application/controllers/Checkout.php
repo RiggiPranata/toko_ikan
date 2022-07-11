@@ -9,6 +9,7 @@ class Checkout extends CI_Controller
         $this->mybreadcrumb->add('Home', base_url());
         $this->mybreadcrumb->add('Checkout - Address', base_url('checkout'));
         $data['breadcrumbs'] = $this->mybreadcrumb->render();
+        $data['menu'] = $this->Model_Produk->select_menu();
 
 
         $this->load->view('templates/header', $data);
@@ -22,6 +23,7 @@ class Checkout extends CI_Controller
     {
         $data['title'] = "Checkout";
         $this->mybreadcrumb->add('Home', base_url());
+        $data['menu'] = $this->Model_Produk->select_menu();
         $this->mybreadcrumb->add('Checkout - Address', base_url('checkout'));
         $this->mybreadcrumb->add('Checkout - Delivery Metode', base_url('checkout/checkout2'));
         $data['breadcrumbs'] = $this->mybreadcrumb->render();
@@ -37,6 +39,7 @@ class Checkout extends CI_Controller
     {
         $data['title'] = "Checkout";
         $this->mybreadcrumb->add('Home', base_url());
+        $data['menu'] = $this->Model_Produk->select_menu();
         $this->mybreadcrumb->add('Checkout - Address', base_url('checkout'));
         $this->mybreadcrumb->add('Checkout - Delivery Metode', base_url('checkout/checkout2'));
         $this->mybreadcrumb->add('Checkout - Payment Metode', base_url('checkout/checkout3'));
@@ -53,6 +56,7 @@ class Checkout extends CI_Controller
     {
         $data['title'] = "Checkout";
         $this->mybreadcrumb->add('Home', base_url());
+        $data['menu'] = $this->Model_Produk->select_menu();
         $this->mybreadcrumb->add('Checkout - Address', base_url('checkout'));
         $this->mybreadcrumb->add('Checkout - Delivery Metode', base_url('checkout/checkout2'));
         $this->mybreadcrumb->add('Checkout - Payment Metode', base_url('checkout/checkout3'));

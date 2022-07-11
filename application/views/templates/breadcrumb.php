@@ -8,4 +8,4 @@
                         <?= $breadcrumbs; ?>
                     </nav>
                 </div>
-                <section class="w-100" id="sort">
+                <!-- <section class="w-100" id="sort"> -->

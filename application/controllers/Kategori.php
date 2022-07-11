@@ -15,6 +15,7 @@ class Kategori extends CI_Controller
         $data['title'] = 'Form Tambah Kategori';
         $data['menu'] = 'kategori';
         $data['kategori'] = array();
+        $data['submenu'] = $this->Model_Admin->select_menu();
 
 
         // set rules errors validation
@@ -35,6 +36,7 @@ class Kategori extends CI_Controller
     {
         $data['title'] = 'Form Ubah Kategori';
         $data['menu'] = 'kategori';
+        $data['submenu'] = $this->Model_Admin->select_menu();
         $data['kategori'] = $this->Model_Kategori->select_where($id)->result();
 
         // set rules errors validation

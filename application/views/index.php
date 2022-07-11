@@ -7,7 +7,7 @@
                         <?php
                         foreach ($ads as $ad) {
                         ?>
-                            <div class="item"><img src="<?= base_url(); ?>assets/img/<?= $ad->foto_ads; ?>" alt="<?= $ad->nama_ads; ?>" class="img-fluid"></div>
+                            <div class="item"><img src="<?= base_url(); ?>assets/img/<?= $ad->foto_ads; ?>" alt="<?= $ad->nama_ads; ?>" class="img-fluid "></div>
                         <?php
                         }
                         ?>
@@ -75,22 +75,16 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front"><a href="<?= base_url(); ?>produk/detail/<?= $hot->produk_id; ?>"><img src="<?= base_url(); ?>assets/img/<?= $hot->image; ?>" alt="<?= $hot->deskripsi; ?>" class="img-fluid"></a></div>
-                                        <div class="back"><a href="<?= base_url(); ?>produk/detail/<?= $hot->produk_id; ?>"><img src="<?= base_url(); ?>assets/img/<?= $hot->image; ?>" alt="" class="img-fluid"></a></div>
                                     </div>
                                 </div><a href="<?= base_url(); ?>produk/detail/<?= $hot->produk_id; ?>" class="invisible"><img src="<?= base_url(); ?>assets/img/<?= $hot->image; ?>" alt="" class="img-fluid"></a>
                                 <div class="text">
                                     <h3><a href="<?= base_url(); ?>produk/detail/<?= $hot->produk_id; ?>"><?= $hot->nama_produk; ?></a></h3>
                                     <p class="price">
-                                        <del></del><?= $hot->harga; ?>
+                                        <del></del>Rp. <?= $hot->harga; ?>
                                     </p>
                                 </div>
                                 <!-- /.text-->
                                 <div class="ribbon sale">
-                                    <div class="theribbon">SALE</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon-->
-                                <div class="ribbon new">
                                     <div class="theribbon">NEW</div>
                                     <div class="ribbon-background"></div>
                                 </div>
@@ -117,11 +111,10 @@
         <div class="col-md-12">
             <div class="box slideshow">
                 <h3>Get Inspired</h3>
-                <p class="lead">Get the inspiration from our world class designers</p>
+                <p class="lead">Dapatkan tips and trik tentang ikan</p>
                 <div id="get-inspired" class="owl-carousel owl-theme">
-                    <div class="item"><a href="#"><img src="<?= base_url(); ?>assets/img/getinspired1.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                    <div class="item"><a href="#"><img src="img/getinspired2.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                    <div class="item"><a href="#"><img src="img/getinspired3.jpg" alt="Get inspired" class="img-fluid"></a></div>
+                    <div class="item"><a href="#"><img src="<?= base_url(); ?>assets/img/ins3.png" alt="Get inspired" class="img-fluid"></a></div>
+                    <div class="item"><a href="#"><img src="<?= base_url(); ?>assets/img/ins4.png" alt="Get inspired" class="img-fluid"></a></div>
                 </div>
             </div>
         </div>

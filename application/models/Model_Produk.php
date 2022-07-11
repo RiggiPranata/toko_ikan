@@ -13,6 +13,27 @@ class Model_Produk extends CI_Model
         return $query;
     }
 
+    public function select_new()
+    {
+        $this->db->order_by('produk_id', 'DESC');
+        $this->db->limit(5);
+        $query = $this->db->get('produk');
+
+        return $query;
+    }
+
+    public function select_limit($limit, $start)
+    {
+        $query = $this->db->get('produk', $limit, $start);
+
+        return $query;
+    }
+
+    public function count_all_produk()
+    {
+        return $this->db->get('produk')->num_rows();
+    }
+
     public function select_by($by, $ad)
     {
         $this->db->order_by($by, $ad);
@@ -32,10 +53,10 @@ class Model_Produk extends CI_Model
         return $query;
     }
 
-    public function select_order($col, $val)
+    public function select_order($col, $val, $limit, $start)
     {
         $this->db->order_by($col, $val);
-        $query = $this->db->get('produk');
+        $query = $this->select_limit($limit, $start);
         return $query;
     }
 
@@ -69,7 +90,7 @@ class Model_Produk extends CI_Model
             "harga" => $this->input->post('harga', true),
             "deskripsi" => $this->input->post('deskripsi', true),
             "stok" => $this->input->post('stok', true),
-            "image" => 'product1.jpg',
+            "image" => $this->input->post('image', true),
         ];
         $this->db->where(array('produk_id' => $id));
         $this->db->update('produk', $data);
@@ -79,5 +100,19 @@ class Model_Produk extends CI_Model
     {
         $this->db->where(array('produk_id' => $id));
         $this->db->delete('produk');
+    }
+
+    function select_menu()
+    {
+        $this->db->where('menu_id', 2);
+        $query = $this->db->get('submenu')->result_array();
+        return $query;
+    }
+
+    function select_submenu()
+    {
+        $this->db->where('menu_id', 3);
+        $query = $this->db->get('submenu')->result_array();
+        return $query;
     }
 }

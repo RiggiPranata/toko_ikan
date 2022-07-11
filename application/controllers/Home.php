@@ -13,7 +13,9 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data['ads'] = $this->Model_Ads->ads()->result();
-		$data['hot_produk'] = $this->Model_Produk->select_all()->result();
+
+		$data['hot_produk'] = $this->Model_Produk->select_new()->result();
+		$data['menu'] = $this->Model_Produk->select_menu();
 		$data['title'] = "Home | Toko Ikan";
 		$this->load->view('templates/header', $data);
 		$this->load->view('index', $data);

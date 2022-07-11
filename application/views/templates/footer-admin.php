@@ -6,6 +6,7 @@
     <script src="<?= base_url(); ?>assets/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="<?= base_url(); ?>assets/js/front.js"></script>
     <script src="<?= base_url(); ?>assets/js/sort.js"></script>
+    <script src="<?= base_url(); ?>assets/js/tbh.js"></script>
     </body>
 
     </html>
