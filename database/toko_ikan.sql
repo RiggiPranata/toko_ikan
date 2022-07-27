@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jul 2022 pada 15.44
+-- Waktu pembuatan: 27 Jul 2022 pada 17.57
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.4.7
 
@@ -59,7 +59,7 @@ CREATE TABLE `ads` (
 --
 
 INSERT INTO `ads` (`ads_id`, `nama_ads`, `foto_ads`, `isActive`) VALUES
-(1, 'Up to 50%', 'ads50.png', 1),
+(1, 'Up to 50%', 'ads51.png', 1),
 (2, 'Beli 5 Ikan, gratis Serokan', 'ins3.png', 1),
 (3, 'Beli Ikan sepasang bonus obat akuarium', 'ins4.png', 1);
 
@@ -117,7 +117,7 @@ INSERT INTO `keranjang` (`keranjang_id`, `produk_id`, `user_id`, `total`, `jumla
 CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL,
   `menu` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `menu`
@@ -302,7 +302,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `ads`
 --
 ALTER TABLE `ads`
-  MODIFY `ads_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ads_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
@@ -332,7 +332,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `submenu`

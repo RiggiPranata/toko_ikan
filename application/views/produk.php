@@ -30,7 +30,7 @@
                         <p class="price">
                             <del></del>Rp. <?= $prod->harga; ?>
                         </p>
-                        <p class="buttons"><a href="<?= base_url('produk/detail'); ?>" class="btn btn-outline-secondary">View detail</a><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a></p>
+                        <p class="buttons"><a href="<?= base_url(); ?>produk/detail/<?= $prod->produk_id; ?>" class="btn btn-outline-secondary">View detail</a><a href="<?= base_url(); ?>basket/addCart/<?= $prod->produk_id; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a></p>
                     </div>
                     <!-- /.text-->
                 </div>

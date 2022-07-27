@@ -25,11 +25,7 @@ class Model_Order extends CI_Model
 
     public function tambahData()
     {
-        $is_active =  $this->input->post('isActive', true);
-        if ($is_active == null) {
-            $is_active = 0;
-        };
-        $data = [
+        $$data = [
             "nama_ads" => $this->input->post('nama', true),
             "foto_ads" => 'product1.jpg',
             "isActive" => $is_active,

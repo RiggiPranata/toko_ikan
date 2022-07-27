@@ -174,6 +174,7 @@ class Produk extends CI_Controller
         $data['kategori'] = $this->Model_Kategori->select_all()->result_array();
         $data['produk'] = array();
 
+
         // set rules errors validation
         $this->form_validation->set_rules('nama', 'Nama', 'required');
         $this->form_validation->set_rules('kategori', 'kategori', 'required');
@@ -188,9 +189,10 @@ class Produk extends CI_Controller
         } else {
             $this->Model_Produk->tambahData();
             // $this->session->set_flashdata('flash', 'ditambahkan');
-            redirect('produk/tambah');
+            redirect('admin/produk');
         }
     }
+
 
     public function ubah($id)
     {
@@ -208,7 +210,6 @@ class Produk extends CI_Controller
         $this->form_validation->set_rules('stok', 'stok', 'required');
 
 
-
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header-admin', $data);
             $this->load->view('forms/form_produk', $data);
@@ -216,7 +217,7 @@ class Produk extends CI_Controller
         } else {
             $data = $this->Model_Produk->ubahData($id);
             // $this->session->set_flashdata('flash', 'diubah');
-            redirect('admin');
+            redirect('admin/produk');
         }
     }
 
@@ -224,6 +225,6 @@ class Produk extends CI_Controller
     {
         $this->Model_Produk->hapusData($id);
         // $this->session->set_flashdata('flash', 'dihapus');
-        redirect('admin');
+        redirect('admin/produk');
     }
 }

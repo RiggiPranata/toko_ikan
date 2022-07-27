@@ -39,4 +39,11 @@ class Order extends CI_Controller
         // $this->session->set_flashdata('flash', 'dihapus');
         redirect('admin/order');
     }
+
+    public function addOrder()
+    {
+        $this->session->userdata('id');
+        $this->input->post()
+
+    }
 }

@@ -10,7 +10,8 @@
             </div>
             <div class="form-group">
                 <label for="image">Image</label>
-                <input type="text" class="form-control" id="image" name="image" value="<?= (count($ads) > 0) ? $ads[0]->foto_ads : ''; ?>">
+                <input type="file" class="form-control" id="image" name="image">
+                <label for="image" class="pl-3 text-muted font-italic">file sebelumnya : <?= (count($ads) > 0) ? $ads[0]->foto_ads : ''; ?></label>
             </div>
             <div class="form-check">
                 <?php if ((count($ads) > 0) ? $ads[0]->isActive : "" == 1) : ?>

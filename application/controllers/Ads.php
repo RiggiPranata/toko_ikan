@@ -21,13 +21,14 @@ class Ads extends CI_Controller
         $this->form_validation->set_rules('nama', 'Nama', 'required');
 
         if ($this->form_validation->run() == FALSE) {
+            echo 'error';
             $this->load->view('templates/header-admin', $data);
             $this->load->view('forms/form_ads');
             $this->load->view('templates/footer-admin');
         } else {
             $this->Model_Ads->tambahData();
             // $this->session->set_flashdata('flash', 'ditambahkan');
-            redirect('ads/tambah');
+            redirect('admin/ads');
         }
     }
 
@@ -40,7 +41,6 @@ class Ads extends CI_Controller
 
         // set rules errors validation
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('image', 'Picture', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header-admin', $data);

@@ -1,9 +1,9 @@
 <div id="checkout" class="col-lg-9">
     <div class="box">
-        <form method="get" action="<?= base_url('order'); ?>">
+        <form method="get" action="<?= base_url('order/addOrder'); ?>">
             <h1>Checkout - Order review</h1>
             <div class="nav flex-column flex-md-row nav-pills text-center">
-                <a href="<?= base_url('checkout'); ?>" class="nav-link flex-sm-fill text-sm-center "> <i class="fa fa-map-marker"> </i>Address</a>
+                <a href="<?= base_url('checkout/checkout1'); ?>" class="nav-link flex-sm-fill text-sm-center "> <i class="fa fa-map-marker"> </i>Address</a>
                 <a href="<?= base_url('checkout/checkout2'); ?>" class="nav-link flex-sm-fill text-sm-center "> <i class="fa fa-truck"> </i>Delivery Method</a>
                 <a href="<?= base_url('checkout/checkout3'); ?>" class="nav-link flex-sm-fill text-sm-center "> <i class="fa fa-money"> </i>Payment Method</a>
                 <a href="<?= base_url('checkout/checkout4'); ?>" class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-eye"> </i>Order Review</a>
@@ -21,22 +21,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="#"><img src="img/detailsquare.jpg" alt="White Blouse Armani"></a></td>
-                                <td><a href="#">White Blouse Armani</a></td>
-                                <td>2</td>
-                                <td>$123.00</td>
-                                <td>$0.00</td>
-                                <td>$246.00</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#"><img src="img/basketsquare.jpg" alt="Black Blouse Armani"></a></td>
-                                <td><a href="#">Black Blouse Armani</a></td>
-                                <td>1</td>
-                                <td>$200.00</td>
-                                <td>$0.00</td>
-                                <td>$200.00</td>
-                            </tr>
+                            <?php foreach ($produk as $result) : ?>
+                                <tr>
+                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $result[0]['image']; ?>" alt="">
+                                    </td>
+                                    <td><?= $result[0]['nama_produk']; ?></td>
+                                    <td>
+                                        <?= $qty; ?>
+                                    </td>
+                                    <td id="harga">Rp.<?= $result[0]['harga']; ?></td>
+                                    <td>$0.00</td>
+                                    <td id="total">Rp.</td>
+                                    <td><a href=""><i class="fa fa-trash-o"></i></a></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                         <tfoot>
                             <tr>
@@ -57,3 +55,4 @@
     <!-- /.box-->
 </div>
 <!-- /.col-lg-9-->
+<script src="<?= base_url(); ?>assets/js/Harga.js"></script>

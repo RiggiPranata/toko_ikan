@@ -71,26 +71,59 @@ class Model_Produk extends CI_Model
 
     public function tambahData()
     {
+        $image = $_FILES['image']['name'];
+
+        if ($image == '') {
+        } else {
+            $config['upload_path'] = FCPATH . '/assets/img';
+            $config['allowed_types'] = 'jpg|png|jpeg';
+
+            $this->load->library('upload', $config);
+            // $this->upload->do_upload($image);
+            if (!$this->upload->do_upload('image')) {
+                echo 'gambar gagal diupload';
+            } else {
+                $image_prod = $this->upload->data('file_name');
+            }
+        }
+
         $data = [
             "nama_produk" => $this->input->post('nama', true),
             "kategori" => $this->input->post('kategori', true),
             "harga" => $this->input->post('harga', true),
             "deskripsi" => $this->input->post('deskripsi', true),
             "stok" => $this->input->post('stok', true),
-            "image" => 'product1.jpg',
+            "image" => $image,
         ];
+
         $this->db->insert('produk', $data);
     }
 
     function ubahData($id)
     {
+        $image = $_FILES['image']['name'];
+
+        if ($image == '') {
+        } else {
+            $config['upload_path'] = FCPATH . '/assets/img';
+            $config['allowed_types'] = 'jpg|png|jpeg';
+
+            $this->load->library('upload', $config);
+            // $this->upload->do_upload($image);
+            if (!$this->upload->do_upload('image')) {
+                echo 'gambar gagal diupload';
+            } else {
+                $image_prod = $this->upload->data('file_name');
+            }
+        }
+
         $data = [
             "nama_produk" => $this->input->post('nama', true),
             "kategori" => $this->input->post('kategori', true),
             "harga" => $this->input->post('harga', true),
             "deskripsi" => $this->input->post('deskripsi', true),
             "stok" => $this->input->post('stok', true),
-            "image" => $this->input->post('image', true),
+            "image" => $image,
         ];
         $this->db->where(array('produk_id' => $id));
         $this->db->update('produk', $data);

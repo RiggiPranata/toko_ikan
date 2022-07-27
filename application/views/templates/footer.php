@@ -72,6 +72,7 @@ _________________________________________________________
 <script src="<?= base_url(); ?>assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
 <script src="<?= base_url(); ?>assets/js/front.js"></script>
+<script src="<?= base_url(); ?>assets/js/Harga.js"></script>
 <script src="<?= base_url(); ?>assets/js/breadcrumb.js" defer></script>
 </body>
 

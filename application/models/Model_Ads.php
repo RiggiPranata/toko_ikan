@@ -27,13 +27,27 @@ class Model_Ads extends CI_Model
 
     public function tambahData()
     {
+        $image = $_FILES['image']['name'];
+
+        if ($image == '') {
+        } else {
+            $config['upload_path'] = FCPATH . '/assets/img';
+            $config['allowed_types'] = 'jpg|png|jpeg';
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('image')) {
+                echo 'gambar gagal diupload';
+            } else {
+                $image_prod = $this->upload->data('file_name');
+            }
+        }
         $is_active =  $this->input->post('isActive', true);
         if ($is_active == null) {
             $is_active = 0;
         };
         $data = [
             "nama_ads" => $this->input->post('nama', true),
-            "foto_ads" => 'product1.jpg',
+            "foto_ads" => $image,
             "isActive" => $is_active,
         ];
         $this->db->insert('ads', $data);
@@ -41,9 +55,23 @@ class Model_Ads extends CI_Model
 
     function ubahData($id)
     {
+        $image = $_FILES['image']['name'];
+
+        if ($image == '') {
+        } else {
+            $config['upload_path'] = FCPATH . '/assets/img';
+            $config['allowed_types'] = 'jpg|png|jpeg';
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('image')) {
+                echo 'gambar gagal diupload';
+            } else {
+                $image_prod = $this->upload->data('file_name');
+            }
+        }
         $data = [
             "nama_ads" => $this->input->post('nama', true),
-            "foto_ads" => $this->input->post('image', true),
+            "foto_ads" => $image,
             "isActive" => $this->input->post('isActive', true),
         ];
         $this->db->where(array('ads_id' => $id));

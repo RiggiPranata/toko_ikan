@@ -22,7 +22,7 @@
                 <h1 class="text-center"><?= $result->nama_produk; ?></h1>
                 <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p>
                 <p class="price">Rp.<?= $result->harga; ?></p>
-                <p class="text-center buttons"><a href="<?= base_url('basket'); ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a><a href="<?= base_url('checkout'); ?>" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Buy Now</a></p>
+                <p class="text-center buttons"><a href="<?= base_url(); ?>basket/addCart/<?= $result->produk_id; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a><a href="<?= base_url('checkout'); ?>" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Buy Now</a></p>
             </div>
             <div data-slider-id="1" class="owl-thumbs">
                 <?php foreach ($produk as $result) : ?>

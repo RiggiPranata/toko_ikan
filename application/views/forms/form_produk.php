@@ -34,7 +34,8 @@
             </div>
             <div class="form-group">
                 <label for="image">Image</label>
-                <input type="text" class="form-control" id="image" name="image" value="<?= (count($produk) > 0) ? $produk[0]->image : ''; ?>">
+                <input type="file" class="form-control" id="image" name="image">
+                <label for="image" class="pl-3 text-muted font-italic">file sebelumnya : <?= (count($produk) > 0) ? $produk[0]->image : ''; ?></label>
             </div>
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-primary px-5">Submit</button>
