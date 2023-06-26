@@ -1,6 +1,6 @@
 <div id="checkout" class="col-lg-9">
     <div class="box">
-        <form method="get" action="<?= base_url('checkout/checkout2'); ?>">
+        <form method="POST" action="<?= base_url('checkout/checkout2'); ?>">
             <h1>Checkout - Address</h1>
             <div class="nav flex-column flex-md-row nav-pills text-center">
                 <a href="<?= base_url('checkout/checkout1'); ?>" class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker"> </i>Address</a>
@@ -13,7 +13,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input id="nama" type="text" class="form-control">
+                            <input id="nama" type="text" name='nama' class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -22,13 +22,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="noTelepon">No Telepon</label>
-                            <input id="noTelepon" type="text" class="form-control">
+                            <input id="noTelepon" type="text" name='notelepon' class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input id="email" type="email" class="form-control">
+                            <input id="email" type="email" name='email' class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <input id="alamat" type="text" class="form-control">
+                            <input id="alamat" type="text" name='alamat' class="form-control" required>
                         </div>
                     </div>
                 </div>

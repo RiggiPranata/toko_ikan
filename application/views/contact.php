@@ -21,12 +21,13 @@
                 <p class="text-muted">Silakan menulis email kepada kami.</p>
                 <ul>
                     <li><strong><a href="mailto:riggi06190252@stmik-banisaleh.ac.id">toko_ikan@gmail.com</a></strong></li>
+                    <li><strong><a href="https://riggi-pranata.gitbook.io/dokumentasi-website-toko-ikan/" target="__Blank">DOCUMENTASI</a></strong></li>
                 </ul>
             </div>
             <!-- /.col-sm-4-->
         </div>
         <!-- /.row-->
-        <h2>Contact form</h2>
+        <!-- <h2>Contact form</h2>
         <form method="POST" action="<?= base_url('contact/message'); ?>">
             <div class="row">
                 <div class="col-md-6">
@@ -63,7 +64,7 @@
                     <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button>
                 </div>
             </div>
-            <!-- /.row-->
+            /.row -->
         </form>
     </div>
 </div>

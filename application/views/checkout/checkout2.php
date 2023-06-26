@@ -15,7 +15,7 @@
                             <h4>GO SEND</h4>
                             <p>Get it now.</p>
                             <div class="box-footer text-center">
-                                <input type="radio" name="delivery" value="delivery1">
+                                <input type="radio" name="delivery" value="delivery1" required>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                             <h4>COD</h4>
                             <p>Meet and Pay.</p>
                             <div class="box-footer text-center">
-                                <input type="radio" name="delivery" value="delivery2">
+                                <input type="radio" name="delivery" value="delivery2" required>
                             </div>
                         </div>
                     </div>

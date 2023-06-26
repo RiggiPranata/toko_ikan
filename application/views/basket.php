@@ -15,7 +15,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <?php foreach ($produk as $result) : ?>
                             <tr>
                                 <td><a href="#"><img src="<?= base_url(); ?>/assets/img/<?= $result[0]['image']; ?>" alt=""></a></td>
@@ -24,8 +23,8 @@
                                     <input type="number" id="qty" value="<?= $qty; ?>" class="form-control">
                                 </td>
                                 <td id="harga">Rp.<?= $result[0]['harga']; ?></td>
-                                <td>$0.00</td>
-                                <td id="total">Rp.</td>
+                                <td>Rp.0.00</td>
+                                <td id="total">Rp.<?= $result[0]['harga']; ?></td>
                                 <td><a href=""><i class="fa fa-trash-o"></i></a></td>
                             </tr>
                         <?php endforeach; ?>
@@ -33,7 +32,7 @@
                     <tfoot>
                         <tr>
                             <th colspan="5">Total</th>
-                            <th id="totalHarga" colspan="2"></th>
+                            <th id="totalHarga" colspan="2"><?= $result[0]['harga']; ?></th>
                         </tr>
                     </tfoot>
                 </table>

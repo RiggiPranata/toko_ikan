@@ -42,8 +42,7 @@ class Order extends CI_Controller
 
     public function addOrder()
     {
-        $this->session->userdata('id');
-        $this->input->post()
-
+        $this->Model_Order->tambahData();
+        redirect('produk');
     }
 }

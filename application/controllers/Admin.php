@@ -83,6 +83,8 @@ class Admin extends CI_Controller
         $data['menu'] = "order";
         $data['submenu'] = $this->Model_Admin->select_menu();
         $data['order'] = $this->Model_Order->select_all()->result_array();
+        // var_dump($data['order']);
+        // die;
         $this->load->view('templates/header-admin', $data);
         $this->load->view('master/order', $data);
         $this->load->view('templates/footer-admin', $data);

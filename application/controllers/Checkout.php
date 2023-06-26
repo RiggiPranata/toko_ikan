@@ -21,8 +21,9 @@ class Checkout extends CI_Controller
 
     public function checkout2()
     {
+
         $this->load->model('Model_Order');
-        $this->Model_Order->tambahData()
+        $this->Model_Order->tambahDataUser();
         $data['title'] = "Checkout";
         $this->mybreadcrumb->add('Home', base_url());
         $data['menu'] = $this->Model_Produk->select_menu();

@@ -30,8 +30,8 @@
                                         <?= $qty; ?>
                                     </td>
                                     <td id="harga">Rp.<?= $result[0]['harga']; ?></td>
-                                    <td>$0.00</td>
-                                    <td id="total">Rp.</td>
+                                    <td>Rp.0.00</td>
+                                    <td id="total">Rp.<?= $result[0]['harga']; ?></td>
                                     <td><a href=""><i class="fa fa-trash-o"></i></a></td>
                                 </tr>
                             <?php endforeach; ?>
@@ -39,7 +39,7 @@
                         <tfoot>
                             <tr>
                                 <th colspan="5">Total</th>
-                                <th>$446.00</th>
+                                <th>Rp.<?= $result[0]['harga']; ?></th>
                             </tr>
                         </tfoot>
                     </table>
@@ -48,11 +48,10 @@
             </div>
             <!-- /.content-->
             <div class="box-footer d-flex justify-content-between"><a href="<?= base_url('checkout/checkout3'); ?>" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>Back to payment method</a>
-                <button type="submit" class="btn btn-primary">Place an order<i class="fa fa-chevron-right"></i></button>
+                <button type="submit" class="btn btn-primary" onclick="alert('Pesanan diterima, terima kasih telah berbelanja.')">Place an order<i class="fa fa-chevron-right"></i></button>
             </div>
         </form>
     </div>
     <!-- /.box-->
 </div>
 <!-- /.col-lg-9-->
-<script src="<?= base_url(); ?>assets/js/Harga.js"></script>

@@ -69,6 +69,12 @@ class Model_Produk extends CI_Model
         return $this->db->get('produk')->result();
     }
 
+    public function cariDataGuppy($value)
+    {
+        $this->db->like('nama_produk', $value);
+        $this->db->or_like('kategori', $value);
+        return $this->db->get('produk')->result();
+    }
     public function tambahData()
     {
         $image = $_FILES['image']['name'];

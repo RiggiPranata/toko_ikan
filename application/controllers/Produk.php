@@ -165,6 +165,28 @@ class Produk extends CI_Controller
         $this->load->view('produk', $data);
         $this->load->view('templates/footer');
     }
+    public function cari_guppy($value)
+    {
+
+        // var title
+        $data['title'] = "Produk | Toko Ikan";
+
+        // breadcrumb init
+        $this->mybreadcrumb->add('Home', base_url());
+        $this->mybreadcrumb->add('Produk', base_url('produk'));
+        $data['breadcrumbs'] = $this->mybreadcrumb->render();
+        $data['menu'] = $this->Model_Produk->select_menu();
+
+
+
+        $data['produk'] = $this->Model_Produk->cariDataGuppy($value);
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/breadcrumb', $data);
+        $this->load->view('produk', $data);
+        $this->load->view('templates/footer');
+    }
 
     public function tambah()
     {

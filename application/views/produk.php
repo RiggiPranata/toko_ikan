@@ -1,5 +1,5 @@
 <div class="col-lg-12">
-    <div class="box info-bar">
+    <!-- <div class="box info-bar">
         <div class="row">
             <div class="col-md-12 col-lg-7 products-number-sort">
                 <form class="form-inline d-block d-lg-flex justify-content-between flex-column flex-md-row">
@@ -13,7 +13,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="row products">
         <?php
         foreach ($produk as $prod) {

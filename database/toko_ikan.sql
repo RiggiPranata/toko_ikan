@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jul 2022 pada 17.57
+-- Waktu pembuatan: 04 Agu 2022 pada 16.21
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.4.7
 
@@ -105,8 +105,7 @@ CREATE TABLE `keranjang` (
 --
 
 INSERT INTO `keranjang` (`keranjang_id`, `produk_id`, `user_id`, `total`, `jumlah`) VALUES
-(1, 1, 1, 1600000, 3),
-(2, 3, 1, 80000, 1);
+(12, 3, 1, 165600, 1);
 
 -- --------------------------------------------------------
 
@@ -145,8 +144,8 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`order_id`, `keranjang_id`, `user_id`, `status`) VALUES
-(4, 2, 1, 'proses'),
-(3, 1, 1, 'shipping');
+(6, 13, 2, 'proses'),
+(5, 13, 2, 'proses');
 
 -- --------------------------------------------------------
 
@@ -176,7 +175,8 @@ INSERT INTO `produk` (`produk_id`, `nama_produk`, `kategori`, `harga`, `deskrips
 (5, 'Ikan Guppy Blue ', 'Ikan Guppy', 45000, 'Ikan dengan corak biru laut.', 11, 'prodIkan4.png'),
 (6, 'Ikan Morris Half-Black ', 'Ikan Morris', 70000, 'Ikan dengan corak yang sangat kontras dengan warna monoton.', 9, 'prodIkan2.png'),
 (7, 'Serokan Jaring - sobex', 'Aksesoris - serokan', 30000, 'Serokan jaring ikan, tanpa takut merusak ikan tercinta.', 12, 'ins3.png'),
-(10, 'Acriflavine - Obat akuarium', 'Aksesoris - Obat', 12500, 'Untuk mensterilkan air di akuarium anda agar selalu bersih.', 50, 'ins4.png');
+(10, 'Acriflavine - Obat akuarium', 'Aksesoris - Obat', 12500, 'Untuk mensterilkan air di akuarium anda agar selalu bersih.', 50, 'ins4.png'),
+(14, 'Ikan Moli', 'Ikan Morris', 45000, 'Ikan moli full platinum', 10, 'molyas.png');
 
 -- --------------------------------------------------------
 
@@ -227,7 +227,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `nama_user`, `no_telepon`, `alamat`, `email`) VALUES
-(1, 'riggi', '089678244014', 'tambun selatan', 'riggi@gmail.com');
+(1, 'riggi', '089678244014', 'tambun selatan', 'riggi@gmail.com'),
+(2, 'Akbahr', '0897121', 'Taman Raya', 'akbhar@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -314,7 +315,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `keranjang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `keranjang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `menu`
@@ -326,13 +327,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT untuk tabel `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `submenu`
@@ -344,7 +345,7 @@ ALTER TABLE `submenu`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

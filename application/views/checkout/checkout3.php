@@ -15,7 +15,7 @@
                             <h4>GOPAY</h4>
                             <p>We like it all.</p>
                             <div class="box-footer text-center">
-                                <input type="radio" name="payment" value="payment1">
+                                <input type="radio" name="payment" value="payment1" required>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                             <h4>CASH</h4>
                             <p>Cash on Deal.</p>
                             <div class="box-footer text-center">
-                                <input type="radio" name="payment" value="payment2">
+                                <input type="radio" name="payment" value="payment2" required>
                             </div>
                         </div>
                     </div>

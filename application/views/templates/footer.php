@@ -16,7 +16,7 @@ _________________________________________________________
                 <h4 class="mb-3">Top categories</h4>
                 <h5>Ikan</h5>
                 <ul class="list-unstyled">
-                    <li><a href="<?= base_url('produk'); ?>">Guppy</a></li>
+                    <li><a href="<?= base_url('produk/cari_guppy/guppy'); ?>">Guppy</a></li>
                 </ul>
             </div>
             <!-- /.col-lg-3-->

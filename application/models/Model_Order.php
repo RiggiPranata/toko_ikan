@@ -25,12 +25,22 @@ class Model_Order extends CI_Model
 
     public function tambahData()
     {
-        $$data = [
-            "nama_ads" => $this->input->post('nama', true),
-            "foto_ads" => 'product1.jpg',
-            "isActive" => $is_active,
+        $data = [
+            "keranjang_id" => 1,
+            "user_id" => 1,
+            "status" => 'proses',
         ];
-        $this->db->insert('ads', $data);
+        $this->db->insert('order', $data);
+    }
+    public function tambahDataUser()
+    {
+        $data_user = [
+            'nama_user' => $this->input->post('nama'),
+            'no_telepon' => $this->input->post('notelepon'),
+            'alamat' => $this->input->post('alamat'),
+            'email' => $this->input->post('email'),
+        ];
+        $this->db->insert('user', $data_user);
     }
 
     function ubahData($id_order)
